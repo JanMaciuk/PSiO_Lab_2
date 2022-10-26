@@ -23,43 +23,43 @@ public class Zadanie3 {
     }
 
     public static double E_x_jm(double x, int n) {
-        double aprox_e = 1;
+        double approx_e = 1;
         double L; // Licznik
-        double M = 1; // Mianownik
+        double M; // Mianownik
         for (int i = 1; i <= n; i++) {
             L = Potega(x,i);
-            M = Silnia(i);;
-            aprox_e = aprox_e + (L/M);
+            M = Silnia(i);
+            approx_e = approx_e + (L/M);
         }
 
-        return aprox_e;
+        return approx_e;
     }
 
     public static double Sin_x_jm(double x, int n) {
-        double aprox_sin = x;
+        double approx_sin = x;
         double L; // Licznik
-        double M = 1; // Mianownik
+        double M; // Mianownik
         for (int i = 1; i <= n; i++) {
             L = Potega(x,2*i+1);
-            M = Silnia(2*i+1);;
-            if (i%2 == 0) { aprox_sin = aprox_sin + (L/M);}
-            else {aprox_sin = aprox_sin - (L/M);}
+            M = Silnia(2*i+1);
+            if (i%2 == 0) { approx_sin = approx_sin + (L/M);}
+            else {approx_sin = approx_sin - (L/M);}
         }
 
-        return aprox_sin;
+        return approx_sin;
     }
     public static double Cos_x_jm(double x, int n) {
-        double aprox_cos = 1;
+        double approx_cos = 1;
         double L; // Licznik
-        double M = 1; // Mianownik
+        double M; // Mianownik
         for (int i = 1; i <= n; i++) {
             L = Potega(x,2*i);
             M = Silnia(2*i);
-            if (i%2 == 0) { aprox_cos = aprox_cos + (L/M);}
-            else {aprox_cos = aprox_cos - (L/M);}
+            if (i%2 == 0) { approx_cos = approx_cos + (L/M);}
+            else {approx_cos = approx_cos - (L/M);}
         }
 
-        return aprox_cos;
+        return approx_cos;
     }
     // wady stosowania własnych metod do silni i potęgi to:
     // ograniczenie dopuszczalnego zakresu liczb
