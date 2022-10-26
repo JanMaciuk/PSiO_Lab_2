@@ -59,7 +59,7 @@ public class Zadanie3 {
             else {aprox_cos = aprox_cos - (L/M);}
         }
 
-        return (aprox_cos-(0));
+        return aprox_cos;
     }
     // wady stosowania własnych metod do silni i potęgi to:
     // ograniczenie dopuszczalnego zakresu liczb
@@ -67,8 +67,16 @@ public class Zadanie3 {
     // wolniejsze wykonywanie programu i zużycie więcej zasobów
     // zaletą natomiast jest łatwiejsze debugowanie, podgląd obliczanych wartości "w toku"
     public static void main(String[] args) {
-        System.out.println("Aproksymacja wartości Sin: "+Sin_x_jm(7,50));
-        System.out.println("Aproksymacja wartości Cos: "+Cos_x_jm(3,50));
-        System.out.println("Aproksymacja wartości e: "+E_x_jm(9,50));
+        int x = 80;
+        int dokladnosc = 75;
+        if ((x > 80) || (x < 0)) {
+            System.out.println("Przewidziany zakres wartości x to od 1 do 80"); System.exit(1);
+        }
+        if ((dokladnosc > 80) || (dokladnosc < 1)) {
+            System.out.println("Przewidziany zakres dokładnosci to 1 do 80, na prawdę nie potrzebujesz więcej"); System.exit(1);
+        }
+        System.out.println("Aproksymacja wartości Sin(x)= "+Sin_x_jm(x,dokladnosc));
+        System.out.println("Aproksymacja wartości Cos(x)= "+Cos_x_jm(x,dokladnosc));
+        System.out.println("Aproksymacja wartości e^x= "+E_x_jm(x,dokladnosc));
     }
 }
